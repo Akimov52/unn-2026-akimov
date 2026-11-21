@@ -49,12 +49,12 @@ make check               # выполнить все проверки
 ## Docker
 
 ```bash
-docker build -t telegram-echo-bot:local .
+make build
 
 docker run --rm \
   -e TELEGRAM_TOKEN="<token>" \
   -e TELEGRAM_BASE_URL="https://api.telegram.org" \
-  telegram-echo-bot:local
+  unn-2026-akimov-bot-test
 ```
 
 ## GitHub Actions и GHCR

@@ -31,4 +31,4 @@ mypy-check:
 
 # Build the Docker image locally.
 build:
-	docker build -t telegram-echo-bot:local .
+	docker build -t unn-2026-akimov-bot-test .

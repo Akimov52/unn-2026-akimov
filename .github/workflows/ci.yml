@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Install uv and Python
-        uses: astral-sh/setup-uv@68559ccf0ccbb8e9a1fc1f5e1c42e2aa66b9c2fa # v10.3.3
+        uses: astral-sh/setup-uv@v10.4.0
         with:
           python-version: "3.14"
 
@@ -61,5 +61,5 @@ jobs:
           platforms: linux/amd64
           push: ${{ github.event_name == 'push' }}
           tags: |
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:${{ github.sha }}
+            ghcr.io/akimov52/unn-2026-akimov:latest
+            ghcr.io/akimov52/unn-2026-akimov:${{ github.sha }}
