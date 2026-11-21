@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 def poll_once(dispatcher: Dispatcher, messenger: Messenger, offset: int) -> int:
     updates = messenger.get_updates(
         offset=offset,
+        limit=100,
         timeout=POLLING_TIMEOUT,
         allowed_updates=["message"],
     )
