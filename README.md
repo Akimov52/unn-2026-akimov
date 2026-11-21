@@ -49,16 +49,16 @@ make check               # выполнить все проверки
 ## Docker
 
 ```bash
-docker build -t telegram-echo-bot:local .
+make build
 
 docker run --rm \
   -e TELEGRAM_TOKEN="<token>" \
   -e TELEGRAM_BASE_URL="https://api.telegram.org" \
-  telegram-echo-bot:local
+  unn-2026-akimov-bot-test
 ```
 
 ## GitHub Actions и GHCR
 
 Workflow `.github/workflows/ci.yml` запускает проверки и сборку Docker-образа при pull request
 в `master`. После push/merge в `master` он также публикует образы с тегами `latest` и commit SHA
-в `ghcr.io/<owner>/<repository>`. # Комментарий для PR
+в `ghcr.io/<owner>/<repository>`.
