@@ -21,6 +21,7 @@ class LongPollingTests(unittest.TestCase):
         messenger.get_updates.assert_called_once_with(
             offset=10,
             timeout=POLLING_TIMEOUT,
+            limit=100,
             allowed_updates=["message"],
         )
         dispatcher.dispatch.assert_has_calls(
@@ -40,6 +41,12 @@ class LongPollingTests(unittest.TestCase):
         next_offset = poll_once(dispatcher, messenger, offset=42)
 
         self.assertEqual(next_offset, 42)
+        messenger.get_updates.assert_called_once_with(
+            offset=42,
+            timeout=POLLING_TIMEOUT,
+            limit=100,
+            allowed_updates=["message"],
+        )
         dispatcher.dispatch.assert_not_called()
 
     def test_polling_retries_after_error_and_stops_on_keyboard_interrupt(self) -> None:
