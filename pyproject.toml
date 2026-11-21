@@ -1,0 +1,25 @@
+[project]
+name = "telegram-echo-bot"
+version = "0.1.0"
+description = "A small Telegram text echo bot for the UNN 2026 assignment"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "mypy",
+    "ruff",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "ARG"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+explicit_package_bases = true
+packages = ["bot"]
