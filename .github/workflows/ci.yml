@@ -61,5 +61,5 @@ jobs:
           platforms: linux/amd64
           push: ${{ github.event_name == 'push' }}
           tags: |
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:${{ github.sha }}
+            ghcr.io/akimov52/unn-2026-akimov:latest
+            ghcr.io/akimov52/unn-2026-akimov:${{ github.sha }}
