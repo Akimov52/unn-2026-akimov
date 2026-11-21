@@ -61,4 +61,4 @@ docker run --rm \
 
 Workflow `.github/workflows/ci.yml` запускает проверки и сборку Docker-образа при pull request
 в `master`. После push/merge в `master` он также публикует образы с тегами `latest` и commit SHA
-в `ghcr.io/<owner>/<repository>`.
+в `ghcr.io/<owner>/<repository>`. # Комментарий для PR
